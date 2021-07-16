@@ -9,6 +9,6 @@ if(!DB::$isConnected){
     echo DB::$error;
 }
 
-$user = new User("Test", "test@gmail.com", "phphphp");
+$user = new User("Test", "test@gmail.com", "phphphp", "ддд");
 $user->create('users');
 ?>
