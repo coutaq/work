@@ -1,0 +1,16 @@
+{
+    "name": "coutaq/work",
+    "description": "test project",
+    "type": "project",
+    "authors": [{
+        "name": "coutaq",
+        "email": "coutaq@gmail.com"
+    }],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "work\\app\\": "app"
+        }
+    }
+}

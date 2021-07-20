@@ -1,11 +1,11 @@
 <?php
-namespace work\database;
+namespace work\app\database;
 class DB{
-    public static $connection;
+    private static $connection;
     public static $isConnected = false;
     public static $error;
     public static function connect(){
-        include './config/db.php';
+        require_once(dirname(__DIR__, 1).'/config/db.php');
         switch($db_server){
             case "mysql":
                 self::$connection = mysqli_connect($db_url, $db_user, $db_password, $db_name);
@@ -18,6 +18,12 @@ class DB{
             default:
                 echo("Такая база данных не поддерживается");
         };
+    }
+    public static function getConnection(){
+        if(!self::$connection){
+            self::connect();
+        }
+        return self::$connection;
     }
 }
 ?>
